@@ -17,11 +17,14 @@ class MainWindow(QtWidgets.QMainWindow):
         MainWindow.setFixedSize(1109, 600)
         MainWindow.setStyleSheet("background-color: #1E1E1E;")
         MainWindow.setWindowTitle("Bird Bot v2.0")
+        
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("QMessageBox QLabel { color: #FFFFFF; }QMessageBox QPushButton { background-color: #5D43FB;color: #FFFFFF;}")
+
         self.sidebar = QtWidgets.QWidget(self.centralwidget)
         self.sidebar.setGeometry(QtCore.QRect(0, 0, 61, 601))
         self.sidebar.setStyleSheet("background-color: #232323;border-right: 1px solid #2e2d2d;")
+
         self.home_tab = QtWidgets.QWidget(self.sidebar)
         self.home_tab.setGeometry(QtCore.QRect(0, 85, 60, 45))
         self.home_tab.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -37,6 +40,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.home_icon.setPixmap(QtGui.QPixmap(":/images/home_alt.png"))
         self.home_icon.setScaledContents(True)
         self.home_icon.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+
         self.profiles_tab = QtWidgets.QWidget(self.sidebar)
         self.profiles_tab.setGeometry(QtCore.QRect(0, 130, 60, 45))
         self.profiles_tab.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
