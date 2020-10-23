@@ -3,7 +3,7 @@ Originally forked from [natewong1313/bird-bot](https://github.com/natewong1313/b
 
 # Bird Bot
 [Support Discord](https://discord.gg/kfAqBKv)<br/><br/>
-Bird Bot is an auto-checkout bot that currently supports Walmart and Best buy. This fork is intended to be used to purchase nVidia RTX 3XXX Graphics Cards. More sites will be added in the future.
+Bird Bot is an auto-checkout bot that currently supports Walmart and Best buy. This fork is intended to be used to update the original to allow this tool to work again.  Originally the goal was to purchase nVidia RTX 3XXX Graphics Cards, but could be used for anything. More sites will be added in the future.
 
 * Easy to use interface built on PyQt5
 * Waits for items to restock if they are out of stock
