@@ -16,7 +16,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
         MainWindow.setFixedSize(1109, 600)
         MainWindow.setStyleSheet("background-color: #1E1E1E;")
-        MainWindow.setWindowTitle("Bird Bot")
+        MainWindow.setWindowTitle("Bird Bot v2.0")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("QMessageBox QLabel { color: #FFFFFF; }QMessageBox QPushButton { background-color: #5D43FB;color: #FFFFFF;}")
         self.sidebar = QtWidgets.QWidget(self.centralwidget)
@@ -52,6 +52,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.profiles_icon.setPixmap(QtGui.QPixmap(":/images/profiles.png"))
         self.profiles_icon.setScaledContents(True)
         self.profiles_icon.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+
+        self.settings_tab = QtWidgets.QWidget(self.sidebar)
+        self.settings_tab.setGeometry(QtCore.QRect(0, 220, 60, 45))
+        self.settings_tab.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.settings_tab.setStyleSheet("background-color: transparent;border: none;")
+
         self.proxies_tab = QtWidgets.QWidget(self.sidebar)
         self.proxies_tab.setGeometry(QtCore.QRect(0, 175, 60, 45))
         self.proxies_tab.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -64,10 +70,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.proxies_icon.setStyleSheet("border: none;")
         self.proxies_icon.setPixmap(QtGui.QPixmap(":/images/proxies.png"))
         self.proxies_icon.setScaledContents(True)
-        self.settings_tab = QtWidgets.QWidget(self.sidebar)
-        self.settings_tab.setGeometry(QtCore.QRect(0, 220, 60, 45))
-        self.settings_tab.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.settings_tab.setStyleSheet("background-color: transparent;border: none;")
+
         self.settings_active_tab = QtWidgets.QWidget(self.settings_tab)
         self.settings_active_tab.setGeometry(QtCore.QRect(0, 0, 4, 45))
         self.settings_active_tab.setStyleSheet("background-color: transparent;border: none;")
@@ -76,25 +79,32 @@ class MainWindow(QtWidgets.QMainWindow):
         self.settings_icon.setStyleSheet("border: none;")
         self.settings_icon.setPixmap(QtGui.QPixmap(":/images/settings.png"))
         self.settings_icon.setScaledContents(True)
+
         self.logo = QtWidgets.QLabel(self.sidebar)
         self.logo.setGeometry(QtCore.QRect(10, 23, 41, 41))
         self.logo.setStyleSheet("border: none;")
         self.logo.setText("")
         self.logo.setPixmap(QtGui.QPixmap(":/images/birdbot.png"))
         self.logo.setScaledContents(True)
+
         self.homepage = HomePage(self.centralwidget)
+
         self.createdialog = CreateDialog(self)
         self.createdialog.addtask_btn.clicked.connect(self.create_task)
         self.createdialog.setWindowIcon(QtGui.QIcon("images/birdbot.png"))
         self.createdialog.hide()
+
         self.profilespage = ProfilesPage(self.centralwidget)
         self.profilespage.hide()
         self.proxiespage = ProxiesPage(self.centralwidget)
         self.proxiespage.hide()
         self.settingspage = SettingsPage(self.centralwidget)
         self.settingspage.hide()
+
         MainWindow.setCentralWidget(self.centralwidget)
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
         self.set_functions()
     def set_functions(self):
         self.current_page = "home"
