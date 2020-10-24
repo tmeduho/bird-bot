@@ -8,6 +8,8 @@ from base64 import b64encode
 from utils import send_webhook
 import requests,time,lxml.html,json,sys,settings
 
+# https://bestbuyapis.github.io/api-documentation/#getting-started
+
 class BestBuy:
     def __init__(self,task_id,status_signal,image_signal,product,profile,proxy,monitor_delay,error_delay):
         self.status_signal,self.image_signal,self.product,self.profile,self.monitor_delay,self.error_delay = status_signal,image_signal,product,profile,float(monitor_delay),float(error_delay)
@@ -517,6 +519,3 @@ class BestBuy:
             except Exception as e:
                 self.status_signal.emit({"msg":"Error Submitting Card (line {} {} {})".format(sys.exc_info()[-1].tb_lineno, type(e).__name__, e),"status":"error"})
                 time.sleep(self.error_delay)
-
-
-
