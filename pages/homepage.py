@@ -21,22 +21,28 @@ class HomePage(QtWidgets.QWidget):
         self.homepage = homepage
         self.homepage.setAttribute(QtCore.Qt.WA_StyledBackground, True)
         self.homepage.setGeometry(QtCore.QRect(60, 0, 1041, 601))
+
         self.tasks_card = QtWidgets.QWidget(self.homepage)
         self.tasks_card.setGeometry(QtCore.QRect(30, 110, 991, 461))
         self.tasks_card.setStyleSheet("background-color: #232323;border-radius: 20px;border: 1px solid #2e2d2d;")
+
         self.scrollArea = QtWidgets.QScrollArea(self.tasks_card)
         self.scrollArea.setGeometry(QtCore.QRect(20, 30, 951, 421))
         self.scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.scrollArea.setStyleSheet("border:none;")
         self.scrollArea.setWidgetResizable(True)
+
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 951, 421))
+
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setContentsMargins(0, -1, 0, -1)
         self.verticalLayout.setSpacing(2)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
+
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+
         self.image_table_header = QtWidgets.QLabel(self.tasks_card)
         self.image_table_header.setGeometry(QtCore.QRect(40, 7, 51, 31))
         self.image_table_header.setText("Image")
@@ -47,36 +53,43 @@ class HomePage(QtWidgets.QWidget):
         font.setWeight(50)
         self.image_table_header.setFont(font)
         self.image_table_header.setStyleSheet("color: rgb(234, 239, 239);border: none;")
+
         self.product_table_header = QtWidgets.QLabel(self.tasks_card)
         self.product_table_header.setGeometry(QtCore.QRect(240, 7, 61, 31))
         self.product_table_header.setFont(font)
         self.product_table_header.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.product_table_header.setText("Product")
+
         self.profile_table_header = QtWidgets.QLabel(self.tasks_card)
         self.profile_table_header.setGeometry(QtCore.QRect(590, 7, 61, 31))
         self.profile_table_header.setFont(font)
         self.profile_table_header.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.profile_table_header.setText("Profile")
+
         self.status_table_header = QtWidgets.QLabel(self.tasks_card)
         self.status_table_header.setGeometry(QtCore.QRect(650, 7, 61, 31))
         self.status_table_header.setFont(font)
         self.status_table_header.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.status_table_header.setText("Status")
+
         self.actions_table_header = QtWidgets.QLabel(self.tasks_card)
         self.actions_table_header.setGeometry(QtCore.QRect(890, 7, 61, 31))
         self.actions_table_header.setFont(font)
         self.actions_table_header.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.actions_table_header.setText("Actions")
+
         self.site_table_header = QtWidgets.QLabel(self.tasks_card)
         self.site_table_header.setGeometry(QtCore.QRect(160, 7, 61, 31))
         self.site_table_header.setFont(font)
         self.site_table_header.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.site_table_header.setText("Site")
+
         self.id_header = QtWidgets.QLabel(self.tasks_card)
         self.id_header.setGeometry(QtCore.QRect(110, 7, 31, 31))
         self.id_header.setFont(font)
         self.id_header.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.id_header.setText("ID")
+
         self.tasks_header = QtWidgets.QLabel(self.homepage)
         self.tasks_header.setGeometry(QtCore.QRect(30, 10, 61, 31))
         self.tasks_header.setText("Tasks")
@@ -87,9 +100,11 @@ class HomePage(QtWidgets.QWidget):
         font.setWeight(50)
         self.tasks_header.setFont(font)
         self.tasks_header.setStyleSheet("color: rgb(234, 239, 239);")
+
         self.checkouts_card = QtWidgets.QWidget(self.homepage)
         self.checkouts_card.setGeometry(QtCore.QRect(440, 45, 171, 51))
         self.checkouts_card.setStyleSheet("background-color: #232323;border-radius: 10px;border: 1px solid #2e2d2d;")
+
         self.checkouts_label = QtWidgets.QLabel(self.checkouts_card)
         self.checkouts_label.setGeometry(QtCore.QRect(78, 10, 81, 31))
         font = QtGui.QFont()
@@ -100,12 +115,14 @@ class HomePage(QtWidgets.QWidget):
         self.checkouts_label.setFont(font)
         self.checkouts_label.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.checkouts_label.setText("Checkouts")
+
         self.checkouts_icon = QtWidgets.QLabel(self.checkouts_card)
         self.checkouts_icon.setGeometry(QtCore.QRect(10, 10, 31, 31))
         self.checkouts_icon.setStyleSheet("border: none;")
         self.checkouts_icon.setText("")
         self.checkouts_icon.setPixmap(QtGui.QPixmap(":/images/success.png"))
         self.checkouts_icon.setScaledContents(True)
+
         global checkouts_count
         self.checkouts_count = QtWidgets.QLabel(self.checkouts_card)
         checkouts_count = self.checkouts_count
@@ -114,20 +131,24 @@ class HomePage(QtWidgets.QWidget):
         self.checkouts_count.setStyleSheet("color: #34C693;border: none;")
         self.checkouts_count.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.checkouts_count.setText("0")
+
         self.tasks_total_card = QtWidgets.QWidget(self.homepage)
         self.tasks_total_card.setGeometry(QtCore.QRect(30, 45, 181, 51))
         self.tasks_total_card.setStyleSheet("background-color: #232323;border-radius: 10px;border: 1px solid #2e2d2d;")
+
         self.tasks_total_label = QtWidgets.QLabel(self.tasks_total_card)
         self.tasks_total_label.setGeometry(QtCore.QRect(80, 10, 91, 31))
         self.tasks_total_label.setFont(font)
         self.tasks_total_label.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.tasks_total_label.setText("Total Tasks")
+
         self.tasks_total_icon = QtWidgets.QLabel(self.tasks_total_card)
         self.tasks_total_icon.setGeometry(QtCore.QRect(10, 10, 31, 31))
         self.tasks_total_icon.setStyleSheet("border: none;")
         self.tasks_total_icon.setText("")
         self.tasks_total_icon.setPixmap(QtGui.QPixmap(":/images/tasks.png"))
         self.tasks_total_icon.setScaledContents(True)
+
         global tasks_total_count
         self.tasks_total_count = QtWidgets.QLabel(self.tasks_total_card)
         tasks_total_count = self.tasks_total_count
@@ -136,20 +157,24 @@ class HomePage(QtWidgets.QWidget):
         self.tasks_total_count.setStyleSheet("color: #755FF6;border: none;")
         self.tasks_total_count.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.tasks_total_count.setText("0")
+
         self.carted_card = QtWidgets.QWidget(self.homepage)
         self.carted_card.setGeometry(QtCore.QRect(240, 45, 171, 51))
         self.carted_card.setStyleSheet("background-color: #232323;border-radius: 10px;border: 1px solid #2e2d2d;")
+
         self.carted_label = QtWidgets.QLabel(self.carted_card)
         self.carted_label.setGeometry(QtCore.QRect(80, 10, 90, 31))
         self.carted_label.setFont(font)
         self.carted_label.setStyleSheet("color: rgb(234, 239, 239);border: none;")
         self.carted_label.setText("Total Carts")
+
         self.carted_icon = QtWidgets.QLabel(self.carted_card)
         self.carted_icon.setGeometry(QtCore.QRect(10, 10, 31, 31))
         self.carted_icon.setStyleSheet("border: none;")
         self.carted_icon.setText("")
         self.carted_icon.setPixmap(QtGui.QPixmap(":/images/cart.png"))
         self.carted_icon.setScaledContents(True)
+
         global carted_count
         self.carted_count = QtWidgets.QLabel(self.carted_card)
         carted_count = self.carted_count
@@ -158,9 +183,11 @@ class HomePage(QtWidgets.QWidget):
         self.carted_count.setStyleSheet("color: #F6905E;border: none;")
         self.carted_count.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.carted_count.setText("0")
+
         self.buttons_card = QtWidgets.QWidget(self.homepage)
         self.buttons_card.setGeometry(QtCore.QRect(640, 45, 381, 51))
         self.buttons_card.setStyleSheet("background-color: #232323;border-radius: 10px;border: 1px solid #2e2d2d;")
+
         self.startall_btn = QtWidgets.QPushButton(self.buttons_card)
         self.startall_btn.setGeometry(QtCore.QRect(103, 10, 86, 32))
         font = QtGui.QFont()
@@ -170,6 +197,7 @@ class HomePage(QtWidgets.QWidget):
         self.startall_btn.setStyleSheet("color: #FFFFFF;background-color: #5D43FB;border: none;")
         self.startall_btn.setText("Start All")
         self.startall_btn.clicked.connect(self.start_all_tasks)
+
         self.stopall_btn = QtWidgets.QPushButton(self.buttons_card)
         self.stopall_btn.setGeometry(QtCore.QRect(197, 10, 81, 32))
         self.stopall_btn.setFont(font)
@@ -177,6 +205,7 @@ class HomePage(QtWidgets.QWidget):
         self.stopall_btn.setStyleSheet("color: #FFFFFF;background-color: #5D43FB;border: none;")
         self.stopall_btn.setText("Stop All")
         self.stopall_btn.clicked.connect(self.stop_all_tasks)
+
         self.deleteall_btn = QtWidgets.QPushButton(self.buttons_card)
         self.deleteall_btn.setGeometry(QtCore.QRect(285, 10, 86, 32))
         self.deleteall_btn.setFont(font)
@@ -184,6 +213,7 @@ class HomePage(QtWidgets.QWidget):
         self.deleteall_btn.setStyleSheet("color: #FFFFFF;background-color: #5D43FB;border: none;")
         self.deleteall_btn.setText("Delete All")
         self.deleteall_btn.clicked.connect(self.delete_all_tasks)
+
         self.newtask_btn = QtWidgets.QPushButton(self.buttons_card)
         self.newtask_btn.setGeometry(QtCore.QRect(10, 10, 86, 32))
         self.newtask_btn.setFont(font)
@@ -248,6 +278,7 @@ class TaskTab(QtWidgets.QWidget):
         self.TaskTab.setMinimumSize(QtCore.QSize(0, 50))
         self.TaskTab.setMaximumSize(QtCore.QSize(16777215, 50))
         self.TaskTab.setStyleSheet("border-radius: none;")
+
         self.product_label = QtWidgets.QLabel(self.TaskTab)
         self.product_label.setGeometry(QtCore.QRect(222, 10, 331, 31))
         font = QtGui.QFont()
@@ -257,14 +288,17 @@ class TaskTab(QtWidgets.QWidget):
         font.setWeight(50)
         self.product_label.setFont(font)
         self.product_label.setStyleSheet("color: rgb(234, 239, 239);")
+
         self.profile_label = QtWidgets.QLabel(self.TaskTab)
         self.profile_label.setGeometry(QtCore.QRect(571, 10, 51, 31))
         self.profile_label.setFont(font)
         self.profile_label.setStyleSheet("color: rgb(234, 239, 239);")
+
         self.status_label = QtWidgets.QLabel(self.TaskTab)
         self.status_label.setGeometry(QtCore.QRect(632, 10, 231, 31))
         self.status_label.setFont(font)
         self.status_label.setStyleSheet("color: rgb(234, 239, 239);")
+
         self.browser_label = QtWidgets.QLabel(self.TaskTab)
         self.browser_label.setGeometry(QtCore.QRect(632, 10, 231, 31))
         self.browser_label.setFont(font)
@@ -272,42 +306,50 @@ class TaskTab(QtWidgets.QWidget):
         self.browser_label.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.browser_label.mousePressEvent = self.open_browser
         self.browser_label.hide()
+
         self.start_btn = QtWidgets.QLabel(self.TaskTab)
         self.start_btn.setGeometry(QtCore.QRect(870, 15, 16, 16))
         self.start_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.start_btn.setPixmap(QtGui.QPixmap(":/images/play.png"))
         self.start_btn.setScaledContents(True)
         self.start_btn.mousePressEvent = self.start
+
         self.stop_btn = QtWidgets.QLabel(self.TaskTab)
         self.stop_btn.setGeometry(QtCore.QRect(870, 15, 16, 16))
         self.stop_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.stop_btn.setPixmap(QtGui.QPixmap(":/images/stop.png"))
         self.stop_btn.setScaledContents(True)
         self.stop_btn.mousePressEvent = self.stop
+
         self.delete_btn = QtWidgets.QLabel(self.TaskTab)
         self.delete_btn.setGeometry(QtCore.QRect(920, 15, 16, 16))
         self.delete_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.delete_btn.setPixmap(QtGui.QPixmap(":/images/trash.png"))
         self.delete_btn.setScaledContents(True)
         self.delete_btn.mousePressEvent = self.delete
+
         self.edit_btn = QtWidgets.QLabel(self.TaskTab)
         self.edit_btn.setGeometry(QtCore.QRect(895, 15, 16, 16))
         self.edit_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.edit_btn.setPixmap(QtGui.QPixmap(":/images/edit.png"))
         self.edit_btn.setScaledContents(True)
         self.edit_btn.mousePressEvent = self.edit
+
         self.image = QtWidgets.QLabel(self.TaskTab)
         self.image.setGeometry(QtCore.QRect(20, 0, 50, 50))
         self.image.setPixmap(QtGui.QPixmap(":/images/no_image.png"))
         self.image.setScaledContents(True)
+
         self.site_label = QtWidgets.QLabel(self.TaskTab)
         self.site_label.setGeometry(QtCore.QRect(140, 10, 61, 31))
         self.site_label.setFont(font)
         self.site_label.setStyleSheet("color: rgb(234, 239, 239);")
+
         self.id_label = QtWidgets.QLabel(self.TaskTab)
         self.id_label.setGeometry(QtCore.QRect(90, 10, 31, 31))
         self.id_label.setFont(font)
         self.id_label.setStyleSheet("color: rgb(234, 239, 239);")
+
         self.stop_btn.raise_()
         self.product_label.raise_()
         self.profile_label.raise_()
@@ -316,6 +358,7 @@ class TaskTab(QtWidgets.QWidget):
         self.delete_btn.raise_()
         self.image.raise_()
         self.site_label.raise_()
+
         self.monitor_delay_label = QtWidgets.QLabel(self.TaskTab)
         self.monitor_delay_label.hide()
         self.error_delay_label = QtWidgets.QLabel(self.TaskTab)
@@ -509,4 +552,3 @@ class BrowserThread(QtCore.QThread):
         self.url,self.cookies = url,cookies
     def run(self):
         open_browser(self.url,self.cookies)
-
