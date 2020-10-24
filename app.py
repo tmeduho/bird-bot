@@ -5,9 +5,11 @@ from pages.profilespage import ProfilesPage
 from pages.proxiespage import ProxiesPage
 from pages.settingspage import SettingsPage
 import images.images, sys, os
+
 def no_abort(a, b, c):
     sys.__excepthook__(a, b, c)
 sys.excepthook = no_abort
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent=parent)
@@ -17,7 +19,7 @@ class MainWindow(QtWidgets.QMainWindow):
         MainWindow.setFixedSize(1109, 600)
         MainWindow.setStyleSheet("background-color: #1E1E1E;")
         MainWindow.setWindowTitle("Bird Bot v2.0")
-        
+
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("QMessageBox QLabel { color: #FFFFFF; }QMessageBox QPushButton { background-color: #5D43FB;color: #FFFFFF;}")
 

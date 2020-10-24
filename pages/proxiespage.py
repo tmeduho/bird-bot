@@ -14,6 +14,7 @@ class ProxiesPage(QtWidgets.QWidget):
         self.proxiespage.setAttribute(QtCore.Qt.WA_StyledBackground, True)
         self.proxiespage.setGeometry(QtCore.QRect(60, 0, 1041, 601))
         self.proxiespage.setStyleSheet("QComboBox::drop-down {    border: 0px;}QComboBox::down-arrow {    image: url(:/images/down_icon.png);    width: 14px;    height: 14px;}QComboBox{    padding: 1px 0px 1px 3px;}QLineEdit:focus {   border: none;   outline: none;}")
+
         self.proxies_card = QtWidgets.QWidget(self.proxiespage)
         self.proxies_card.setGeometry(QtCore.QRect(30, 70, 981, 501))
         font = QtGui.QFont()
@@ -21,12 +22,14 @@ class ProxiesPage(QtWidgets.QWidget):
         font.setFamily("Arial")
         self.proxies_card.setFont(font)
         self.proxies_card.setStyleSheet("background-color: #232323;border-radius: 20px;border: 1px solid #2e2d2d;")
+
         self.listname_edit = QtWidgets.QLineEdit(self.proxies_card)
         self.listname_edit.setGeometry(QtCore.QRect(20, 50, 161, 21))
         self.listname_edit.setFont(font)
         self.listname_edit.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.listname_edit.setPlaceholderText("List Name")
         self.listname_edit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
+
         self.editproxies_header = QtWidgets.QLabel(self.proxies_card)
         self.editproxies_header.setGeometry(QtCore.QRect(20, 10, 101, 31))
         font = QtGui.QFont()
@@ -36,6 +39,7 @@ class ProxiesPage(QtWidgets.QWidget):
         self.editproxies_header.setFont(font)
         self.editproxies_header.setStyleSheet("color: rgb(212, 214, 214);border:  none;")
         self.editproxies_header.setText("Edit Proxies")
+
         self.loadlist_box = QtWidgets.QComboBox(self.proxies_card)
         self.loadlist_box.setGeometry(QtCore.QRect(210, 50, 161, 21))
         font = QtGui.QFont()
@@ -45,6 +49,7 @@ class ProxiesPage(QtWidgets.QWidget):
         self.loadlist_box.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.loadlist_box.addItem("Load List")
         self.loadlist_box.currentTextChanged.connect(self.load_proxies)
+
         self.saveproxies_btn = QtWidgets.QPushButton(self.proxies_card)
         self.saveproxies_btn.setGeometry(QtCore.QRect(400, 450, 86, 32))
         self.saveproxies_btn.setFont(font)
@@ -52,12 +57,14 @@ class ProxiesPage(QtWidgets.QWidget):
         self.saveproxies_btn.setStyleSheet("color: #FFFFFF;background-color: #5D43FB;border-radius: 10px;border: 1px solid #2e2d2d;")
         self.saveproxies_btn.setText("Save")
         self.saveproxies_btn.clicked.connect(self.save_proxies)
+
         self.proxies_edit = QtWidgets.QTextEdit(self.proxies_card)
         self.proxies_edit.setGeometry(QtCore.QRect(20, 90, 941, 341))
         self.proxies_edit.setFont(font)
         self.proxies_edit.setStyleSheet("color: #FFFFFF;padding: 10px;")
         self.proxies_edit.setPlaceholderText("ip:port or ip:port:user:pass")
         self.proxies_edit.setAcceptRichText(False)
+
         self.deleteproxies_btn = QtWidgets.QPushButton(self.proxies_card)
         self.deleteproxies_btn.setGeometry(QtCore.QRect(500, 450, 86, 32))
         self.deleteproxies_btn.setFont(font)
@@ -65,6 +72,7 @@ class ProxiesPage(QtWidgets.QWidget):
         self.deleteproxies_btn.setStyleSheet("color: #FFFFFF;background-color: #5D43FB;border-radius: 10px;border: 1px solid #2e2d2d;")
         self.deleteproxies_btn.setText("Delete")
         self.deleteproxies_btn.clicked.connect(self.delete_proxies)
+
         self.proxies_header = QtWidgets.QLabel(self.proxiespage)
         self.proxies_header.setGeometry(QtCore.QRect(30, 10, 81, 31))
         font = QtGui.QFont()
@@ -74,7 +82,9 @@ class ProxiesPage(QtWidgets.QWidget):
         self.proxies_header.setFont(font)
         self.proxies_header.setStyleSheet("color: rgb(234, 239, 239);")
         self.proxies_header.setText("Proxies")
+
         self.set_data()
+        
         QtCore.QMetaObject.connectSlotsByName(proxiespage)
     
     def set_data(self):
@@ -133,4 +143,3 @@ class ProxiesPage(QtWidgets.QWidget):
         self.listname_edit.setText("")
         self.proxies_edit.setText("")
         QtWidgets.QMessageBox.information(self, "Bird Bot", "Deleted Proxy List")
-

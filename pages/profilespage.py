@@ -171,39 +171,45 @@ class ProfilesPage(QtWidgets.QWidget):
         self.billing_address2_edit.setFont(font)
         self.billing_address2_edit.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.billing_address2_edit.setPlaceholderText("Address 2")
-        
+
         self.billing_city_edit = QtWidgets.QLineEdit(self.billing_card)
         self.billing_city_edit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
         self.billing_city_edit.setGeometry(QtCore.QRect(30, 250, 151, 21))
         self.billing_city_edit.setFont(font)
         self.billing_city_edit.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.billing_city_edit.setPlaceholderText("City")
+
         self.billing_zipcode_edit = QtWidgets.QLineEdit(self.billing_card)
         self.billing_zipcode_edit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
         self.billing_zipcode_edit.setGeometry(QtCore.QRect(208, 250, 75, 21))
         self.billing_zipcode_edit.setFont(font)
         self.billing_zipcode_edit.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.billing_zipcode_edit.setPlaceholderText("Zip Code")
+
         self.billing_state_box = QtWidgets.QComboBox(self.billing_card)
         self.billing_state_box.setGeometry(QtCore.QRect(30, 300, 253, 26))
         self.billing_state_box.setFont(font)
         self.billing_state_box.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.billing_state_box.addItem("State")
+
         self.billing_country_box = QtWidgets.QComboBox(self.billing_card)
         self.billing_country_box.setGeometry(QtCore.QRect(30, 360, 253, 26))
         self.billing_country_box.setFont(font)
         self.billing_country_box.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.billing_country_box.addItem("Country")
         self.billing_country_box.addItem("United States")
+
         self.same_shipping_checkbox = QtWidgets.QCheckBox(self.billing_card)
         self.same_shipping_checkbox.setGeometry(QtCore.QRect(160, 16, 131, 20))
         self.same_shipping_checkbox.setFont(font)
         self.same_shipping_checkbox.setStyleSheet("border:none;color: rgb(234, 239, 239);")
         self.same_shipping_checkbox.setText("Same as shipping")
         self.same_shipping_checkbox.stateChanged.connect(self.same_shipping_checkbox_clicked)
+
         self.tasks_card_3 = QtWidgets.QWidget(self.profilespage)
         self.tasks_card_3.setGeometry(QtCore.QRect(700, 70, 313, 501))
         self.tasks_card_3.setStyleSheet("background-color: #232323;border-radius: 20px;border: 1px solid #2e2d2d;")
+
         self.payment_header = QtWidgets.QLabel(self.tasks_card_3)
         self.payment_header.setGeometry(QtCore.QRect(20, 10, 81, 31))
         font.setPointSize(18) if platform.system() == "Darwin" else font.setPointSize(18*.75)
@@ -212,6 +218,7 @@ class ProfilesPage(QtWidgets.QWidget):
         self.payment_header.setFont(font)
         self.payment_header.setStyleSheet("color: rgb(212, 214, 214);border:  none;")
         self.payment_header.setText("Payment")
+
         self.cardnumber_edit = QtWidgets.QLineEdit(self.tasks_card_3)
         self.cardnumber_edit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
         self.cardnumber_edit.setGeometry(QtCore.QRect(30, 100, 151, 21))
@@ -220,12 +227,14 @@ class ProfilesPage(QtWidgets.QWidget):
         self.cardnumber_edit.setFont(font)
         self.cardnumber_edit.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.cardnumber_edit.setPlaceholderText("Card Number")
+
         self.cardcvv_edit = QtWidgets.QLineEdit(self.tasks_card_3)
         self.cardcvv_edit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
         self.cardcvv_edit.setGeometry(QtCore.QRect(208, 100, 75, 21))
         self.cardcvv_edit.setFont(font)
         self.cardcvv_edit.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.cardcvv_edit.setPlaceholderText("CVV")
+
         self.save_btn = QtWidgets.QPushButton(self.tasks_card_3)
         self.save_btn.setGeometry(QtCore.QRect(70, 300, 86, 32))
         self.save_btn.setFont(font)
@@ -233,21 +242,25 @@ class ProfilesPage(QtWidgets.QWidget):
         self.save_btn.setStyleSheet("color: #FFFFFF;background-color: #5D43FB;border-radius: 10px;border: 1px solid #2e2d2d;")
         self.save_btn.setText("Save")  
         self.save_btn.clicked.connect(self.save_profile)      
+
         self.cardtype_box = QtWidgets.QComboBox(self.tasks_card_3)
         self.cardtype_box.setGeometry(QtCore.QRect(30, 50, 253, 26))
         self.cardtype_box.setFont(font)
         self.cardtype_box.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.cardtype_box.addItem("Card Type")
+
         self.cardmonth_box = QtWidgets.QComboBox(self.tasks_card_3)
         self.cardmonth_box.setGeometry(QtCore.QRect(30, 150, 113, 26))
         self.cardmonth_box.setFont(font)
         self.cardmonth_box.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.cardmonth_box.addItem("Month")
+
         self.cardyear_box = QtWidgets.QComboBox(self.tasks_card_3)
         self.cardyear_box.setGeometry(QtCore.QRect(170, 150, 113, 26))
         self.cardyear_box.setFont(font)
         self.cardyear_box.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.cardyear_box.addItem("Year")
+
         self.profile_header = QtWidgets.QLabel(self.tasks_card_3)
         self.profile_header.setGeometry(QtCore.QRect(20, 220, 81, 31))
         font.setPointSize(18) if platform.system() == "Darwin" else font.setPointSize(18*.75)
@@ -256,6 +269,7 @@ class ProfilesPage(QtWidgets.QWidget):
         self.profile_header.setFont(font)
         self.profile_header.setStyleSheet("color: rgb(212, 214, 214);border:  none;")
         self.profile_header.setText("Profile")
+
         self.profilename_edit = QtWidgets.QLineEdit(self.tasks_card_3)
         self.profilename_edit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
         self.profilename_edit.setGeometry(QtCore.QRect(30, 260, 253, 21))
@@ -265,12 +279,14 @@ class ProfilesPage(QtWidgets.QWidget):
         self.profilename_edit.setFont(font)
         self.profilename_edit.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.profilename_edit.setPlaceholderText("Profile Name")
+
         self.loadprofile_box = QtWidgets.QComboBox(self.tasks_card_3)
         self.loadprofile_box.setGeometry(QtCore.QRect(30, 350, 253, 26))
         self.loadprofile_box.setFont(font)
         self.loadprofile_box.setStyleSheet("outline: 0;border: 1px solid #5D43FB;border-width: 0 0 2px;color: rgb(234, 239, 239);")
         self.loadprofile_box.addItem("Load Profile")
         self.loadprofile_box.currentTextChanged.connect(self.load_profile)
+
         self.delete_btn = QtWidgets.QPushButton(self.tasks_card_3)
         self.delete_btn.setGeometry(QtCore.QRect(167, 300, 86, 32))
         self.delete_btn.setFont(font)
@@ -278,7 +294,9 @@ class ProfilesPage(QtWidgets.QWidget):
         self.delete_btn.setStyleSheet("color: #FFFFFF;background-color: #5D43FB;border-radius: 10px;border: 1px solid #2e2d2d;")
         self.delete_btn.setText("Delete")
         self.delete_btn.clicked.connect(self.delete_profile)
+
         self.set_data()
+        
         QtCore.QMetaObject.connectSlotsByName(profilespage)
     
     def set_data(self):
